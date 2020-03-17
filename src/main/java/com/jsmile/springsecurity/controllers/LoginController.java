@@ -12,7 +12,6 @@ public class LoginController
 	{
 		System.out.println( "\n#### Show Login Page ####" );
 		return "plain-login";
-	}
-	
+	}	
 
 }

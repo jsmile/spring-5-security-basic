@@ -1,4 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -17,13 +19,23 @@
       <i class="failed">Sorry! You entered invalid username/password.</i>      
     </c:if>
     
+    <!-- Logout Message -->  
+    <c:if test="${param.logout != null}">    
+      <i>Logout is sucessful.</i>      
+    </c:if>
+    
     <p>
       User Name : <input type="text" name="username" />
     </p>
     <p>
       Password : <input type="password" name="password" />
     </p>
-    <button type="submit">Login</button>
+    <br />
+    <button type="submit" value="Login">Login</button>
+    
+    <!-- On normal form tag, manually adding tokens 
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    -->
   </form:form>
 </body>
 </html>
